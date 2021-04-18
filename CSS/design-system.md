@@ -27,3 +27,39 @@ $letter-spacing-12: -0.005em;
 2. 거터를 유닛 내부에 배치하면 안된다. 거터는 항상 유닛의 바깥, 여백 (유닛과 유닛 사이)에 배치되어야 한다.
 
 컬럼 사이즈마다 요소를 배치시, 거터를 양 옆에 두고 컬럼 내부에서 요소를 배치하면 된다.
+
+### 컨테이너
+컨테이너는 프론트엔드 개발자가 주로 사용하는 용어중 하나로, 그리드시스템이 적용되는 영역을 컨테이너라고 얘기한다. 컨테이너의 영역은 뷰포트 사이즈에서 양 옆의 margin을 뺀 나머지 값으로 계산한다.
+
+## 반응형 그리드 설계
+그리드 시스템을 코드로 설계시, fixture를 주석으로 넣어 해당 그리드가 어떤 역할을 하는지 알게 해주면 코드를 파악하기 쉬워진다
+```scss
+/*
+* MOBILE (<768px) ------------------------------
+* fixture                        sm
+* # of columns                   4
+* gutter                         20px
+* margin                         5px
+* container-size                 100% - (5px * 2)
+*
+* TABLET (>=768px) ------------------------------
+* fixture                        md
+* # of columns                   12
+* gutter                         20px
+* margin                         30px
+* container-size                 100% - (30px * 2)
+* max-container-size             960px
+*
+* DESKTOP (>=1200px) ------------------------------
+* fixture                        lg
+* # of columns                   12
+* gutter                         20px
+* unit                           75px
+* margin                         auto
+* container-size                 1140px
+* max-container-size             1140px
+*/
+
+$sm-columns: 4; // mobile
+```
+
