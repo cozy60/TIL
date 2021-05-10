@@ -18,3 +18,18 @@
 
 }
 ```
+## :not 선택자
+`:not()`선택자는 가상 클래스중 한가지로, 선택자가 아닌 모든 요소에 적용한다는 의미이다.
+```css
+/* disabled가 아닌 요소에는 모두 background color가 red로 적용 */
+p:not(:disabled) {
+  background-color: red;
+}
+
+/* class가 red가 아닌 요소에는 모두 background color가 blue로 적용 */
+p:not(.red) {
+  background-color: blue;
+}
+```
+## 가상요소의 활용범위
+일반적으로 `<i>`태그를 이용해 아이콘 요소를 꾸밀 시 가상선택자를 사용해 꾸미는 경우가 많다. 그러나 해당 가상 요소가 유동적인 요소 (무조건 나타나는 요소가 아닌 선택적으로 나타날 때) 일 시 가상요소를 활용하기 보다는 직접 마크업을 한 뒤 스타일을 지정해주는 방식이 유용하다.
